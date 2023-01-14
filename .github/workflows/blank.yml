@@ -17,6 +17,6 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{github.actor}}  --password-stdin
       - name: Build with docker
         run: docker build -t ghcr.io/$USERNAME/helloworld .
-      - name: show images
-        run: docker images
+      - name: Push with Docker
+        run: docker push ghcr.io/$USERNAME/helloworld
         
